@@ -46,7 +46,7 @@ function twoArrayOperation(arr1, arr2) {
         var result = []
         for (var i = 0; i < arr1Length; i++) {
             if (arr1.indexOf(i) === arr2.indexOf(i)) {
-                if (arr1.indexOf(arr2) % 2 === 0) {
+                if (i % 2 === 0) {
                     result.push(arr1[i] + arr2[i])
                 } else {
                     result.push(arr1[i] - arr2[i])
@@ -55,7 +55,20 @@ function twoArrayOperation(arr1, arr2) {
         }
         return result
     }
-
+    var result = []
+    for (var i = 0; i < arr1Length; i++) {
+        // if (arr1.indexOf(i) === arr2.indexOf(i)) {
+        if (i % 2 === 0) {
+            result.push(arr1[i] + arr2[i])
+        } else {
+            result.push(arr1[i] - arr2[i])
+        }
+        // }
+        if (result[i] === NaN) {
+            result.push(0)
+        }
+    }
+    return result
 }
 
 console.log(twoArrayOperation([-4, 5, 57, 33, -90, 0], [4, 2, 54, 24, 34])) // [ 0, 3, 111, 9, -56, 0]
