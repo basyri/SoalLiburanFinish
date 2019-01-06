@@ -5,11 +5,18 @@
     PSEUDOCODE HERE : 
 
     FUNCTION soal1(param)
-        SET symbol to '!@#'
-        FOR each column until less than param minus 3
-            CALCULATE symbol as symbol[i]
-        ENDFOR
-        DISPLAY symbol
+        STORE symbol to ['!', '@', '#', '!', '@', '#']
+        
+        IF param not equal to 0
+            SET empty array called tampung
+            STORE num to 0
+                FOR each column until less than param 
+                    STORE empty array with symbol value at num as index
+                    ADD num by 1
+                ENDFOR
+            DISPLAY tampung
+        ELSE
+            DISPLAY invalid input
     ENDFUNCTION
 
     SHOW FUNCTION
@@ -18,10 +25,10 @@
 function soal1(param) {
     // your code here
     var symbol = ['!', '@', '#', '!', '@', '#']
-    var tampung = []
-    var num = 0
-    if (param !== 0) {
 
+    if (param !== 0) {
+        var tampung = []
+        var num = 0
         for (var i = 0; i < param; i++) {
             tampung.push(symbol[num])
             num++
