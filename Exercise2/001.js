@@ -14,9 +14,9 @@
                     STORE empty array with symbol value at num as index
                     ADD num by 1
                 ENDFOR
-            DISPLAY tampung
+            RETURN tampung
         ELSE
-            DISPLAY invalid input
+            RETURN invalid input
     ENDFUNCTION
 
     SHOW FUNCTION

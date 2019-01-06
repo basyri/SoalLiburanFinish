@@ -24,9 +24,9 @@
                         STORE empty array with letter of alphabet at current-index position
                     ADD current-index by 1
                     ENDIF
-            DISPLAY tampung
+            RETURN tampung
         ELSE
-            DISPLAY invalid input
+            RETURN invalid input
 
     ENDFUNCTION
 
