@@ -47,11 +47,7 @@ function soal2(param) {
             tampung[i] = []
             for (var j = 0; j < param; j++) {
                 if (currentIndex < a.length) {
-                    if ((i % 2) === 0) {
-                        tampung[i].push(a[currentIndex])
-                    } else {
-                        tampung[i].push(a[currentIndex])
-                    }
+                    tampung[i].push(a[currentIndex])
                 } else {
                     currentIndex = 0
                     tampung[i].push(a[currentIndex])

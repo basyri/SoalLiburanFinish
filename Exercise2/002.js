@@ -4,26 +4,19 @@ function soal2(param) {
     //your code here
     var pasangan = []
 
-    // var num = 0
-    if (param.length % 2 !== 0 && param.length < 6) {
-        pasangan.push(['Instruktur'])
-    }
-
     for (var i = 0; i < param.length / 2; i++) {
+        pasangan[i] = []
 
-        if (i === 0 || i === param.length - 1) {
-            pasangan.push([param[i] + ',' + param[param.length - 1]])
-        } else if (i === 1 || i === param.length - 2) {
-            pasangan.push([param[i] + ',' + param[param.length - 2]])
-        } else if (i === 2 || i === param.length - 3) {
-            pasangan.push([param[i] + ',' + param[param.length - 3]])
+        if (i === Math.floor(param.length / 2) && param.length % 2 !== 0) {
+            pasangan[i].push('Instruktur')
+            pasangan[i].push(param[i], param[param.length - 1 - i])
+            pasangan[pasangan.length - 1].length = 2
+
+        } else {
+            pasangan[i].push(param[i], param[param.length - 1 - i])
         }
-        // num++
-    }
 
 
-    if (param.length % 2 !== 0 && param.length > 5) {
-        pasangan.push(['Zaki', 'Instruktur'])
     }
 
     return pasangan
@@ -37,7 +30,7 @@ console.log(soal2(['Aries', 'Dimas', 'Gatot', "Nurmantyo", "Zainul", "Majdi"]))
 */
 
 console.log(soal2(['A', 'B', 'C', 'D', 'E'])) //
-// [ ['A','E'] , ['B','D'], ['C','Instruktur']]
+// // [ ['A','E'] , ['B','D'], ['C','Instruktur']]
 
 console.log(soal2(['Susan', 'Albert', 'Erithiana', 'Zaki', 'Sisijoan', 'Henry', "Nio"]))
 // [['Susan','Nio'],['Albert','Henry'],['Erithiana','Sisijoan'],['Zaki','Instruktur']]

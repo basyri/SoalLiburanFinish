@@ -44,7 +44,6 @@ function stringToMultidimensi(str) {
         console.log(tampung)
     } else {
         console.log('char count invalid')
-
     }
 
 }

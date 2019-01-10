@@ -11,10 +11,11 @@
 
 function addAll(param) {
     // your code here
-    var sum = 0
+    var sum = 0,
+        Un, a, b
     var n = param.length
 
-
+    Un = a + (n - 1) * b
     sum = n * (n + 1) / 2;
 
     return sum

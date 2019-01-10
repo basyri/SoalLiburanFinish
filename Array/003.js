@@ -33,7 +33,7 @@ function multidimensiIntoString(arr) {
         for (var i = 0; i < leng; i++) {
             tampung += arr[i]
         }
-        console.log(String(tampung))
+        console.log(tampung.toString())
     } else {
         console.log('input is invalid')
     }

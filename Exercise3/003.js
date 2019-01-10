@@ -4,11 +4,13 @@ function soal3(param) {
     var over20 = []
 
     for (var i = 0; i < param.length; i++) {
+        under20[i] = []
+        over20[i] = []
         for (var j = 0; j < 2; j++) {
             if (param[i][j] < 20) {
-                under20.push(param[i])
+                under20[i].push(param[i])
             } else if (param[i][j] > 20) {
-                over20.push(param[i])
+                over20[i].push(param[i])
             }
         }
     }

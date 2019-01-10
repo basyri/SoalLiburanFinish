@@ -54,21 +54,26 @@ function twoArrayOperation(arr1, arr2) {
             }
         }
         return result
-    }
-    var result = []
-    for (var i = 0; i < arr1Length; i++) {
-        // if (arr1.indexOf(i) === arr2.indexOf(i)) {
-        if (i % 2 === 0) {
-            result.push(arr1[i] + arr2[i])
-        } else {
-            result.push(arr1[i] - arr2[i])
+    } else {
+        var result = []
+        arr2Length = 6
+        // console.log(arr2Length)
+        for (var i = 0; i < arr1Length; i++) {
+
+            if (i % 2 === 0) {
+                result.push(arr1[i] + arr2[i])
+            } else {
+                result.push(arr1[i] - arr2[i])
+            }
+
+            if (typeof result[i] === "undefined") {
+                result[i] = 0
+            }
+
         }
-        // }
-        if (result[i] === NaN) {
-            result.push(0)
-        }
+
+        return result
     }
-    return result
 }
 
 console.log(twoArrayOperation([-4, 5, 57, 33, -90, 0], [4, 2, 54, 24, 34])) // [ 0, 3, 111, 9, -56, 0]
