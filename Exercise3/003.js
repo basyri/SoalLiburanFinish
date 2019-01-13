@@ -1,22 +1,29 @@
 function soal3(param) {
     // your code here
+    var finalResult = {}
     var under20 = []
     var over20 = []
 
     for (var i = 0; i < param.length; i++) {
-        under20[i] = []
-        over20[i] = []
+
+
         for (var j = 0; j < 2; j++) {
             if (param[i][j] < 20) {
-                under20[i].push(param[i])
+                under20.push(param[i][0])
             } else if (param[i][j] > 20) {
-                over20[i].push(param[i])
+                over20.push(param[i][0])
             }
+
         }
+
+
     }
+    finalResult = new Object({
+        under20,
+        over20
+    })
 
-
-    return 'under20: [' + under20 + ']\n' + 'over20: [' + over20 + ']'
+    return finalResult
 }
 
 console.log(soal3([
