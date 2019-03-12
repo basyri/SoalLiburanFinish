@@ -1,20 +1,16 @@
 function soal1(param) {
-    // Your Code Here
-    var tampung = []
-    // for (var i = 0; i < param; i++) {
-    for (var j = 1; j <= param; j++) {
-        if (j % 4 === 0) {
-            tampung.push('Buzz')
-        } else if (j % 7 === 0) {
-            tampung.push('Fizz')
+    let arr = []
+    for (let i = 1; i <= param; i++) {
+        if (i % 4 === 0) {
+            arr.push('Fizz')
+        } else if (i % 7 === 0) {
+            arr.push('Buzz')
 
         } else {
-            tampung.push('')
-
+            arr.push('')
         }
     }
-    // }
-    return tampung
+    return arr
 }
 
 console.log(soal1(20))

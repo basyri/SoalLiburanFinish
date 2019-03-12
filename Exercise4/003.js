@@ -1,12 +1,11 @@
 // hanya boleh menggunakan rekursif
 
 function soal3(param1, param2) {
-    // your code here 
-    if (param2 == 0)
-        return 1;
-    else
-        return param1 * soal3(param1, param2 - 1);
-
+    if (param2 === 1) {
+        return param1
+    } else {
+        return param1 * soal3(param1, param2 - 1)
+    }
 }
 
 console.log(soal3(2, 5))

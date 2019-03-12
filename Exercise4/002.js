@@ -1,22 +1,41 @@
 function soal2(param) {
-    // your code here
-    if (param[i] === '' || param.length < 3) {
-        return 'Invalid input'
-    } else {
-        var tampol = []
-        for (var i = 0; i < param.length; i++) {
-            if (i === 0 || i === param.length - 1) {
-                tampol.push(param[i])
-            } else if (i === Math.floor(param.length / 2)) {
-                tampol.push(param[0] * param[param.length - 1])
-            } else if (param[i] !== '') {
-                tampol.push(param[i])
-            } else {
-                tampol.push('')
+    let arr = []
 
+    if (param.length < 3) {
+        return 'Invalid'
+    } else if (param.length % 2 === 0) {
+        for (let i = 0; i < param.length; i++) {
+            if (i <= Math.floor(param.length / 2) && i >= Math.floor(param.length / 2) - 1) {
+                arr.push(param[0] * param[param.length - 1])
+            } else if (i === 0) {
+                arr.push(param[0])
+
+            } else if (i === param.length - 1) {
+                arr.push(param[param.length - 1])
+            } else {
+                arr.push('')
             }
         }
-        return tampol
+
+        return arr
+    } else {
+        for (let i = 0; i < param.length; i++) {
+            if (i === Math.floor(param.length / 2)) {
+                arr.push(param[0] * param[param.length - 1])
+            } else if (i === 0) {
+                arr.push(param[0])
+
+            } else if (i === param.length - 1) {
+                arr.push(param[param.length - 1])
+            } else if (param[i] !== '') {
+                arr.push(param[i])
+
+            } else {
+                arr.push('')
+            }
+        }
+
+        return arr
     }
 }
 
