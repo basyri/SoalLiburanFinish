@@ -1,13 +1,13 @@
 function soal1(param) {
-    // your code here
-    var nama = []
-    for (var i = param.length; i >= 0; i--) {
-        nama.push(param[i])
+
+    for (var i = param.length - 1; i >= 0; i--) {
+        console.log(param[i]);
+
     }
-    return nama
+
 }
 
-console.log(soal1("Aries Dimas Yudhistira"));
+soal1("Aries Dimas Yudhistira")
 /*
     a
     r

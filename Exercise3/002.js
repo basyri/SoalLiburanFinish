@@ -38,27 +38,25 @@
 */
 
 function soal2(param) {
-    var a = 'abcdefghijklmnopqrstuvwxyz'
+    let arr = []
+    let huruf = 'abcdefghijklmnopqrstuvwxyz'
+    let num = 0
 
-    if (param !== 0) {
-        var currentIndex = 0
-        var tampung = []
-        for (var i = 0; i < param; i++) {
-            tampung[i] = []
-            for (var j = 0; j < param; j++) {
-                if (currentIndex < a.length) {
-                    tampung[i].push(a[currentIndex])
-                } else {
-                    currentIndex = 0
-                    tampung[i].push(a[currentIndex])
-                }
-                currentIndex++
+    for (let i = 0; i < param; i++) {
+        let temp = []
+        for (let j = 0; j < param; j++) {
+            if (num >= 26) {
+                num = 0
+                temp.push(huruf[num])
+            } else {
+                temp.push(huruf[num])
+
             }
+            num++
         }
-        return tampung
-    } else {
-        return ' invalid input'
+        arr.push(temp)
     }
+    return arr
 }
 console.log(soal2(8))
 console.log('\n')
