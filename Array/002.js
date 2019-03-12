@@ -27,23 +27,28 @@
  */
 
 function stringToMultidimensi(str) {
-    // your code here 
-    var leng = str.length
-    var tampung = []
-    var num = 0
-    if (leng % 2 === 0) {
-        var rowNcol = Math.floor(Math.sqrt(leng))
-        for (var i = 0; i < rowNcol; i++) {
-            tampung[i] = []
-            for (var j = 0; j < rowNcol; j++) {
-                tampung[i].push(str[num])
+
+    let n = Math.sqrt(str.length)
+    // console.log(str.length);
+    // console.log(n);
+    let num = 0
+    if (str.length % 2 === 0) {
+        let arr = []
+        for (let i = 0; i < n; i++) {
+            let temp = []
+            for (let j = 0; j < n; j++) {
+                temp.push(str[num])
                 num++
             }
 
+            arr.push(temp)
         }
-        console.log(tampung)
+
+        console.log(arr);
+
     } else {
-        console.log('char count invalid')
+        console.log('Invalid');
+
     }
 
 }

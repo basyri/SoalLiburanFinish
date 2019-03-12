@@ -37,42 +37,34 @@
 */
 
 function twoArrayOperation(arr1, arr2) {
-    // your code here 
-    var arr1Length = arr1.length
-    var arr2Length = arr2.length
-    // var num = 0
 
-    if (arr1Length === arr2Length) {
-        var result = []
-        for (var i = 0; i < arr1Length; i++) {
-            if (arr1.indexOf(i) === arr2.indexOf(i)) {
-                if (i % 2 === 0) {
-                    result.push(arr1[i] + arr2[i])
-                } else {
-                    result.push(arr1[i] - arr2[i])
-                }
-            }
-        }
-        return result
-    } else {
-        var result = []
-        arr2Length = 6
-        // console.log(arr2Length)
-        for (var i = 0; i < arr1Length; i++) {
 
+    let arr = []
+    if (arr1.length > arr2.length) {
+        arr2.push(0)
+        for (let i = 0; i < arr1.length; i++) {
             if (i % 2 === 0) {
-                result.push(arr1[i] + arr2[i])
+                arr.push(arr1[i] + arr2[i])
             } else {
-                result.push(arr1[i] - arr2[i])
-            }
-
-            if (typeof result[i] === "undefined") {
-                result[i] = 0
+                arr.push(arr1[i] - arr2[i])
             }
 
         }
 
-        return result
+        return arr
+
+    } else {
+        for (let i = 0; i < arr1.length; i++) {
+            if (i % 2 === 0) {
+                arr.push(arr1[i] + arr2[i])
+            } else {
+                arr.push(arr1[i] - arr2[i])
+            }
+
+        }
+
+        return arr
+
     }
 }
 

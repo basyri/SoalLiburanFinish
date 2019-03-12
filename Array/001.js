@@ -21,12 +21,14 @@
 */
 
 function wordToArrayReverse(str) {
-    // your code here
-    var tampung = "";
-    for (var i = str.length - 1; i >= 0; i--) {
-        tampung += str[i];
+    let arr = []
+    let split = str.split(' ')
+    for (let i = split.length - 1; i >= 0; i--) {
+        arr.push(split[i])
+
     }
-    console.log(tampung.split(' '));
+    console.log(arr);
+
 }
 
 wordToArrayReverse("Hello my name is Dimas")

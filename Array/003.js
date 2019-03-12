@@ -26,20 +26,20 @@
 */
 
 function multidimensiIntoString(arr) {
-    // your code here
-    var leng = arr.length
-    var tampung = ''
-    if (leng % 2 !== 0) {
-        for (var i = 0; i < leng; i++) {
-            tampung += arr[i]
-        }
-        console.log(tampung.toString())
+    if (arr.length % 2 === 0) {
+        console.log('input is invalid');
     } else {
-        console.log('input is invalid')
-    }
-    // console.log(tampung)
-    // return tampung
+        let res = ''
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                res += arr[i][j]
 
+            }
+        }
+
+        console.log(res);
+
+    }
 }
 
 multidimensiIntoString([
