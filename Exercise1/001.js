@@ -1,19 +1,30 @@
 function soal1(param) {
-    // your code here 
-
-    var s = []
-    if (param !== 0) {
-        for (var i = 1; i <= param; i++) {
-
-            if (i < ((param + 1) / 2) + 1 && i > ((param + 1) / 2) - 1) {
-                s.push('*')
-            } else {
-                s.push('')
-            }
-        }
-        return s
-    } else {
+    if (param === 0) {
         return 'invalid input'
+    } else {
+        let temp = []
+        if (param % 2 !== 0) {
+            for (let i = 0; i < param; i++) {
+                if (i === Math.floor(param / 2)) {
+                    temp.push('*')
+                } else {
+                    temp.push('')
+                }
+            }
+
+            return temp
+        } else {
+            for (let i = 0; i < param; i++) {
+                if (i <= param / 2 && i >= (param / 2) - 1) {
+                    temp.push('*')
+                } else {
+                    temp.push('')
+                }
+            }
+
+            return temp
+
+        }
     }
 }
 
