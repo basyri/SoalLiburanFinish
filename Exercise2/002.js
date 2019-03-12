@@ -2,25 +2,33 @@
 // 1 orang bisa ngerjain soal ini , klo dia bisa, kamu juga
 function soal2(param) {
     //your code here
-    var pasangan = []
+    let arr = []
+    // console.log(param[Math.floor(param.length / 2) - 1]);
 
-    for (var i = 0; i < param.length / 2; i++) {
-        pasangan[i] = []
+    // console.log(param[param.length / 2], '<==');
 
-        if (i === Math.floor(param.length / 2) && param.length % 2 !== 0) {
-            pasangan[i].push('Instruktur')
-            pasangan[i].push(param[i], param[param.length - 1 - i])
-            pasangan[pasangan.length - 1].length = 2
+    for (let i = 0; i < (param.length / 2); i++) {
+        arr.push([param[i], param[param.length - 1 - i]])
+    }
+    // console.log(param.length);
 
-        } else {
-            pasangan[i].push(param[i], param[param.length - 1 - i])
+
+    if (param.length % 2 !== 0) {
+        let arr1 = []
+        // console.log(param.indexOf(param[Math.floor(param.length / 2)]), '<===');
+        // console.log(param.indexOf('C'), '<===');
+
+        for (let i = 0; i < (param.length / 2) - 1; i++) {
+            arr1.push([param[i], param[param.length - 1 - i]])
         }
 
+        arr1.push([param[Math.floor(param.length / 2)], 'Instruktur'])
+        return arr1
+    } else {
+
+        return arr
 
     }
-
-    return pasangan
-
 }
 
 console.log(soal2(['Aries', 'Dimas', 'Gatot', "Nurmantyo", "Zainul", "Majdi"]))
@@ -34,3 +42,18 @@ console.log(soal2(['A', 'B', 'C', 'D', 'E'])) //
 
 console.log(soal2(['Susan', 'Albert', 'Erithiana', 'Zaki', 'Sisijoan', 'Henry', "Nio"]))
 // [['Susan','Nio'],['Albert','Henry'],['Erithiana','Sisijoan'],['Zaki','Instruktur']]
+
+// var pasangan = []
+// var pasanganGanjil = param[Math.floor(param.length / 2)] + '\',' + 'Instruktur'
+// for (var i = 0; i < Math.floor(param.length / 2); i++) {
+//     pasangan[i] = []
+//     pasangan[i].push(param[i], param[param.length - 1 - i])
+
+// }
+// if (param.length % 2 !== 0) {
+//     // pasangan[i].push('Instruktur')
+//     pasangan.push([pasanganGanjil])
+//     return pasangan
+//     //     pasangan[pasangan.length - 1].length = 2
+// } else
+//     return pasangan

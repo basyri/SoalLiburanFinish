@@ -23,21 +23,26 @@
 
 */
 function soal1(param) {
-    // your code here
-    var symbol = ['!', '@', '#', '!', '@', '#']
+    let n = Number(param)
 
-    if (param !== 0) {
-        var tampung = []
-        var num = 0
-        for (var i = 0; i < param; i++) {
-            tampung.push(symbol[num])
+    let arr = []
+    let num = 0
+    let symbol = ['!', '@', '#']
+    if (n === 0) {
+        return 'invalid input'
+    } else {
+
+        for (let i = 0; i < n; i++) {
+            if (num > 2) {
+                num = 0
+                arr.push(symbol[num])
+            } else {
+                arr.push(symbol[num])
+            }
             num++
         }
 
-
-        return tampung
-    } else {
-        return 'invalid input'
+        return arr
     }
 }
 

@@ -1,51 +1,32 @@
-function soal3(param) {
-    // your code here
-    param.sort()
-    var sorting = []
-    for (var i = 0; i < param.length; i++) {
-        sorting[i] = []
-        for (var j = 0; j <= 1; j++) {
-            if (param[i][j] === 'A') {
-                sorting[i].push(param[i][j] + ':' + param[i])
-            } else if (param[i][j] === 'B') {
-                sorting[i].push(param[i][j] + ':' + param[i])
-            } else if (param[i][j] === 'C') {
-                sorting[i].push(param[i][j] + ':' + param[i])
-            } else if (param[i][j] === 'K') {
-                sorting[i].push(param[i][j] + ':' + param[i])
-            } else if (param[i][j] === 'L') {
-                sorting[i].push(param[i][j] + ':' + param[i])
-            } else if (param[i][j] === 'M') {
-                sorting[i].push(param[i][j] + ':' + param[i])
-            } else if (param[i][j] === 'S') {
-                sorting[i].push(param[i][j] + ':' + param[i])
-            } else if (param[i][j] === 'Z') {
-                sorting[i].push(param[i][j] + ':' + param[i])
+function groupAnimals(animals) {
+    let arr = []
+
+    let obj = {}
+    for (let i = 0; i < animals.length; i++) {
+        if (obj[animals[i][0]] === undefined) {
+            obj[animals[i][0]] = 0
+        }
+        obj[animals[i][0]] += 1
+
+    }
+
+    let obKeys = Object.keys(obj)
+    obKeys.sort()
+    for (let j = 0; j < obKeys.length; j++) {
+        let cage = []
+        for (let k = 0; k < animals.length; k++) {
+            if (obKeys[j] === animals[k][0]) {
+                cage.push(animals[k])
             }
         }
+        arr.push(cage)
+        // ifobKeys[j];
+
     }
-    return sorting //[0][1]
+    return arr
 }
-
-console.log(soal3(['Ayam', 'Kucing', 'Bebek', 'Sapi', 'Babi', 'Curut', 'Cacing', 'Monyet']));
-/*
-    {
-        A:['Ayam'],
-        B:['Bebek','Babi'],
-        C:['Cacing','Curut'],
-        K:['Kucing'],
-        M:['Monyet'],
-        S:['Sapi']
-    }
-*/
-
-console.log(soal3(['Anjing', 'Kuda', 'Anoa', 'Zebra', 'Lipan', 'Kudanil', 'Landak']))
-
-/*
-    {
-        A:['Anjing','Anoa'],
-        L:['Lipan','Landak'],
-        K:['Kuda','Kudanil'],
-        Z:['Zebra']
-    }
-*/
+// TEST CASES
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
+// [ ['ayam', 'anoa'], ['cacing'], ['kuda', 'kancil'] ]
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'cicak']));
+// [ ['ayam', 'anoa'], ['cacing', 'cicak'], ['kuda'], ['unta'] ]
