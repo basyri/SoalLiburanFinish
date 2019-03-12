@@ -14,31 +14,30 @@
     - input harus bernilai ganjil , jika tidak ganjil maka " invalid input "
 */
 function benderaInggris(param) {
-    // your code here
-    if (param !== 4) {
-        var t = []
-        for (var i = 1; i <= param; i++) {
-            var s = []
-            if (i === ((param + 1) / 2)) {
-                for (var k = 0; k < param; k++) {
-                    t.push('*')
-                }
-                console.log(t)
-            }
+    let n = Number(param)
+    if (n % 2 === 0) {
+        console.log('invalid');
 
-            for (var j = 1; j <= (param); j++) {
-                if (j < ((param + 1) / 2) + 1 && j > ((param + 1) / 2) - 1) {
-                    s.push("*")
-                } else {
-                    s.push(" ")
-                }
-            }
-            console.log(s)
-        }
     } else {
-        console.log('invalid input') // invalid input
-    }
 
+        for (let i = 0; i < n; i++) {
+            let temp = ''
+            for (let j = 0; j < n; j++) {
+                if (i === Math.floor(n / 2)) {
+                    temp += '*'
+                } else if (j === 0 || j === n - 1) {
+                    temp += '\''
+                } else if (j === Math.floor(n / 2)) {
+                    temp += '*'
+                } else {
+                    temp += ' '
+                }
+            }
+            console.log(temp);
+        }
+
+
+    }
 }
 
 benderaInggris(9)

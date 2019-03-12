@@ -1,19 +1,17 @@
 function soal3(param) {
-    // your code here 
-    var tampung = []
-    var num = 1
-    if (num < param * param) {
-        for (var i = 0; i < param; i++) {
-            tampung[i] = []
-            for (var j = 0; j < param; j++) {
-                tampung[i].push(num)
-                num++
-            }
-
-
+    let n = Number(param)
+    let num = 1
+    let arr = []
+    for (let i = 0; i < n; i++) {
+        let temp = []
+        for (let j = 0; j < n; j++) {
+            temp.push(num)
+            num++
         }
-        console.log(tampung)
+        arr.push(temp)
     }
+
+    console.log(arr);
 
 }
 
