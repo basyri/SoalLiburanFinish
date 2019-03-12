@@ -10,16 +10,24 @@
 */
 
 function scotlandFlag(param) {
-    temp = ''
-    for (let j = 0; j < param; j++) {
-        if (j === 0 || j === param - 1) {
-            temp += '\''
-        } else {
-            temp += ' '
-        }
-    }
 
-    console.log(temp);
+    for (var i = 0; i < param - 2; i++) {
+        var s = ''
+        for (var j = 0; j < param; j++) {
+            if (j === 0 || j === param - 1) {
+                s += '\''
+            } else if (i === j - 1) {
+                s += '*'
+            } else if (j === param - 2 - i) {
+                s += '*'
+
+            } else {
+                s += ' '
+            }
+
+        }
+        console.log(s)
+    }
 
 }
 
