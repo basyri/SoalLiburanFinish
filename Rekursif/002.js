@@ -18,7 +18,9 @@
    
    palindromeRecursive("makan")
    output: false
-*/
+
+bikin tugas pyramid pake recursive
+   */
 
 function palindromeRecursive(str) {
     // your code here 
