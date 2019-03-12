@@ -1,21 +1,21 @@
 function soal3(param1) {
-    var currentNum = 1
-    var tampung = []
-    for (var i = 0; i < param1; i++) {
-        tampung[i] = []
-        for (var j = 0; j < param1; j++) {
-            if ((i % 2) === 0) {
-                tampung[i].push(currentNum)
+    let arr = []
+    let num = 1
+    for (let i = 0; i < param1; i++) {
+        let temp = []
+        for (let j = 0; j < param1; j++) {
+            if (i % 2 === 0) {
+                temp.push(num)
             } else {
-                tampung[i].unshift(currentNum)
+                temp.unshift(num)
             }
-            currentNum++
-
+            num++
         }
+        arr.push(temp)
 
     }
 
-    return tampung
+    return arr
 }
 
 console.log(soal3(3))
