@@ -7,23 +7,13 @@ function soal2(param) {
 
     // console.log(param[param.length / 2], '<==');
 
-    for (let i = 0; i < (param.length / 2); i++) {
+    for (let i = 0; i < ((param.length - 1) / 2); i++) {
         arr.push([param[i], param[param.length - 1 - i]])
     }
-    // console.log(param.length);
-
 
     if (param.length % 2 !== 0) {
-        let arr1 = []
-        // console.log(param.indexOf(param[Math.floor(param.length / 2)]), '<===');
-        // console.log(param.indexOf('C'), '<===');
-
-        for (let i = 0; i < (param.length / 2) - 1; i++) {
-            arr1.push([param[i], param[param.length - 1 - i]])
-        }
-
-        arr1.push([param[Math.floor(param.length / 2)], 'Instruktur'])
-        return arr1
+        arr.push([param[Math.floor(param.length / 2)], 'Instruktur'])
+        return arr
     } else {
 
         return arr
