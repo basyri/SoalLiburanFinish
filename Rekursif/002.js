@@ -24,13 +24,27 @@ bikin tugas pyramid pake recursive
 
 function palindromeRecursive(str) {
     // your code here 
-    if (str.length <= 1) {
+    // ================
+    // using substr
+    // ================
+    // if (str.length <= 1) {
+    //     return true
+    // } else if (str.charAt(0) !== str.charAt(str.length - 1)) {
+    //     return false
+    // } else {
+    //     return palindromeRecursive(str.substr(1, str.length - 2))
+    // }
+    // ================
+    // using slice
+    // ================
+    if (str.length === 1) {
         return true
     } else if (str.charAt(0) !== str.charAt(str.length - 1)) {
         return false
     } else {
-        return palindromeRecursive(str.substr(1, str.length - 2))
+        return palindromeRecursive(str.slice(1, str.length - 1))
     }
+
 }
 
 console.log(palindromeRecursive("kasur ini rusak")) // true 
