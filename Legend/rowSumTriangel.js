@@ -32,21 +32,31 @@
 function rowSumTriangle(row) {
     // your code here 
     // var tampol = []
-    var num = 1
-    for (var i = 0; i < row; i++) {
-        var tampol = 0
-        for (var j = 0; j <= i; j++) {
-            if (num % 2 !== 0) {
-                tampol += num
-            }
+    // =====================
+    //     versi panjang
+    // =====================
+    // var num = 1
+    // for (var i = 0; i < row; i++) {
+    //     var temp = 0
+    //     for (var j = 0; j <= i; j++) {
+    //         if (num % 2 !== 0) {
+    //             temp += num
+    //         }
 
-            num += 2
-        }
+    //         num += 2
+    //     }
 
-    }
+    // }
 
 
-    return tampol
+    // return temp
+
+
+    // =====================
+    //      versi pendek
+    // =====================
+
+    return Math.pow(row, 3)
 
 }
 
