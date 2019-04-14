@@ -4,11 +4,10 @@ function soal3(array) {
     for (let i = 0; i < array.length; i++) {
         // key dari suatu object bersifat unik
         if (obj[array[i][0]] === undefined) {
-            obj[array[i][0]] = [array[i]]
-        } else if (obj.hasOwnProperty(array[i][0])) {
-            obj[array[i][0]].push(array[i])
-
+            obj[array[i][0]] = []
         }
+        obj[array[i][0]].push(array[i])
+
     }
     return obj
 }
